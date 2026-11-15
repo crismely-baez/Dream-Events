@@ -1,0 +1,304 @@
+* { /* Esto aplica a absolutamente todos los elementos de la página */
+    margin: 0; /* Quita los espacios por fuera que los navegadores ponen solos */
+    padding: 0; /* Quita los espacios de relleno por dentro que vienen por defecto */
+    box-sizing: border-box; /* Hace que los bordes y rellenos no agranden el tamaño final de las cajas */
+}
+
+body { /* Estilos generales para toda la página */
+    background-color: #f5ebe6; /* Pinta todo el fondo de un color crema rosado suave */
+}
+
+.menu { /* Barra superior donde van el logo y los enlaces */
+    background-color: #f5ebe6; /* Le da el mismo fondo crema rosado a la barra */
+    display: flex; /* Pone el logo y los enlaces uno al lado del otro en fila */
+    justify-content: space-between; /* Empuja el logo hacia la izquierda y los enlaces hacia la derecha */
+    align-items: center; /* Centra todo a la misma altura */
+    padding: 8px 40px; /* Deja espacio interno de 8px arriba/abajo y 40px a los lados */
+    position: sticky; /* Hace que el menú se quede pegado cuando bajas la página */
+    top: 0; /* Le indica que se quede pegado justo en el borde de arriba (0 píxeles) */
+    z-index: 1000; /* Asegura que el menú siempre pase POR ENCIMA de las fotos y tarjetas al bajar */
+}
+
+.marca { /* Caja que agrupa el dibujo del logo y el nombre de la empresa */
+    display: flex; /* Pone el dibujo del logo al lado del texto */
+    align-items: center; /* Alinea el dibujo y el texto al centro de altura */
+    gap: 15px; /* Deja una separación de 15px entre el dibujo y el nombre */
+}
+
+.logo-menu img { /* Imagen del logo en el menú */
+    width: 55px; /* Le da un ancho fijo de 55 píxeles */
+    display: block; /* Evita un pequeño espacio fantasma que suele quedar debajo de las fotos */
+}
+
+.titulo-logo { /* Nombre principal de la marca */
+    margin: 0; /* Quita espacios extra alrededor del título */
+    color: #4a322e; /* Pinta las letras de color marrón oscuro */
+    font-size: 28px; /* Define un tamaño grande para la letra */
+}
+
+.subtitulo-logo { /* Texto pequeño debajo del nombre de la marca */
+    font-size: 14px; /* Define un tamaño de letra pequeño */
+    letter-spacing: 2px; /* Separa un poco las letras entre sí para que se vea elegante */
+}
+
+.contenedor-enlaces { /* Caja que guarda los botones de navegación */
+    display: flex; /* Pone los enlaces en fila horizontal */
+    align-items: center; /* Los alinea verticalmente al centro */
+    gap: 25px; /* Deja 25px de espacio entre cada enlace */
+}
+
+.contenedor-enlaces a { /* Estilo de cada palabra o enlace del menú */
+    text-decoration: none; /* Quita la línea subrayada típica de los enlaces */
+    color: #4a322e; /* Pinta las letras de marrón oscuro */
+    font-size: 18px; /* Define el tamaño del texto del menú */
+}
+
+.contenedor-enlaces a.activo { /* Estilo especial para el botón de la página en la que estamos ahora */
+    background-color: #7d5d58; /* Le pone un fondo marrón rosado */
+    color: white; /* Cambia el color de la letra a blanco */
+    padding: 10px 24px; /* Crea espacio alrededor del texto para que parezca un botón */
+    border-radius: 25px; /* Redondea las esquinas para darle forma de píldora */
+}
+
+.banner { /* Sección grande de portada con foto de fondo */
+    background-image: url(img/img-banner.jfif); /* Carga la fotografía que va de fondo */
+    background-size: cover; /* Ajusta la foto para que cubra toda la caja sin deformarse */
+    background-position: center; /* Centra la foto para que siempre se vea la parte principal */
+    padding: 135px 45px; /* Da bastante altura arriba/abajo (100px) y espacio a los lados (40px) */
+}
+
+.contenido-portada { /* Caja que contiene los textos encima de la foto de portada */
+    max-width: 500px; /* Limita el ancho del texto para que no tape toda la fotografía */
+}
+
+.contenido-portada h1 { /* Título principal de la portada */
+    color: #4a322e;
+    font-size: 45px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.contenido-portada p { /* Párrafo descriptivo debajo del título de portada */
+    font-size: 22px; /* Define un tamaño de letra mediano-grande */
+    color: #4a322e;
+}
+
+.galeria {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px 25px 15px 25px;
+    text-align: center;
+}
+
+.galeria h1 {
+    color: #4a322e;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subtitulo-galeria {
+    font-family: sans-serif;
+    color: #4a322e;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.contenedor-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-categoria {
+    background-color: #fbf5f2;
+    border-radius: 22px;
+    padding: 28px 22px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-categoria h2 {
+    color: #4a322e;
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.tarjeta-categoria p {
+    font-family: sans-serif;
+    color: #4a322e;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.mosaico-fotos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.mosaico-fotos img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    transition: transform 0.3 ease;
+}
+
+.mosaico-fotos img:hover {
+    transform: scale(1.05);
+}
+
+.cta-evento {
+    padding: 40px 80px;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.caja-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 25px;
+    padding: 45px 60px;
+    background-image: linear-gradient(rgba(223, 194, 188, 0.60)), url("img/foto-footer.png");
+}
+
+.caja-cta h2 {
+    color: #4a322e;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.caja-cta p {
+    font-family: sans-serif;
+    color: #4a322e;
+    font-size: 16px;
+}
+
+.btn { /* Botón principal de acción */
+    display: inline-block; /* Permite darle medidas y espacios como una caja sin ocupar todo el ancho */
+    background-color: #7d5d58; /* Pinta el botón de marrón rosado */
+    color: white; /* Pone las letras del botón en blanco */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    padding: 12px 28px; /* Da grosor y ancho interno al botón */
+    border-radius: 25px; /* Redondea completamente los bordes del botón */
+    font-family: sans-serif; /* Usa letra limpia y moderna */
+    margin-top: 25px; /* Separa el botón del texto que tiene arriba */
+    cursor: pointer; /* Cambia la flecha del mouse por una manito al pasar por encima */
+    transition: background-color 0.3s ease; /* Hace que el cambio de color sea suave y no de golpe */
+}
+
+.btn:hover { /* Qué pasa cuando el usuario pasa el mouse encima del botón */
+    background-color: #4a322e; /* Oscurece el color del botón */
+}
+
+.footer { /* Caja principal del pie de página */
+    background-image: url(img/footer-foto.png);
+    color: #f5ebe6; /* Pinta las letras de color crema suave */
+    text-align: center; /* Centra todos los textos */
+    padding: 50px 20px 30px 20px; /* Deja espacio arriba, a los lados y abajo */
+}
+
+.copyright { /* Texto final de derechos reservados */
+    font-family: sans-serif; /* Letra limpia */
+    font-size: 14px; /* Letra pequeña */
+    color: #edd9d4; /* Color rosado claro */
+    border-top: 1px solid #7d5d58; /* Dibuja una línea fina encima del texto */
+    padding-top: 20px; /* Separa el texto de esa línea */
+    max-width: 800px; /* Hace que la línea no llegue hasta los bordes de la pantalla */
+    margin: 0 auto; /* Centra la línea y el texto */
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO - GALERÍA
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Menú */
+    .menu {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        position: static;
+    }
+
+    .marca {
+        gap: 10px;
+    }
+
+    .titulo-logo {
+        font-size: 22px;
+    }
+
+    .subtitulo-logo {
+        font-size: 11px;
+    }
+
+    .contenedor-enlaces {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contenedor-enlaces a {
+        font-size: 16px;
+    }
+
+    .contenedor-enlaces a.activo {
+        padding: 8px 18px;
+    }
+
+    /* Banner */
+    .banner {
+        padding: 60px 20px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 32px;
+    }
+
+    .contenido-portada p {
+        font-size: 18px;
+    }
+
+    /* Galería en una sola columna */
+    .galeria {
+        padding: 30px 15px 15px 15px;
+    }
+
+    .galeria h1 {
+        font-size: 28px;
+    }
+
+    .contenedor-galeria {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta-categoria {
+        padding: 22px 16px;
+    }
+
+    /* Caja rosada CTA WhatsApp */
+    .cta-evento {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .caja-cta {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .caja-cta h2 {
+        font-size: 24px;
+    }
+
+    .caja-cta .btn {
+        margin-top: 10px;
+    }
+}

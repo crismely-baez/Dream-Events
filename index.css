@@ -1,0 +1,469 @@
+* { /* Esto aplica a absolutamente todos los elementos de la página */
+    margin: 0; /* Quita los espacios por fuera que los navegadores ponen solos */
+    padding: 0; /* Quita los espacios de relleno por dentro que vienen por defecto */
+    box-sizing: border-box; /* Hace que los bordes y rellenos no agranden el tamaño final de las cajas */
+}
+
+body { /* Estilos generales para toda la página */
+    background-color: #f5ebe6; /* Pinta todo el fondo de un color crema rosado suave */
+}
+
+.menu { /* Barra superior donde van el logo y los enlaces */
+    background-color: #f5ebe6; /* Le da el mismo fondo crema rosado a la barra */
+    display: flex; /* Pone el logo y los enlaces uno al lado del otro en fila */
+    justify-content: space-between; /* Empuja el logo hacia la izquierda y los enlaces hacia la derecha */
+    align-items: center; /* Centra todo a la misma altura */
+    padding: 8px 40px; /* Deja espacio interno de 8px arriba/abajo y 40px a los lados */
+    position: sticky; /* Hace que el menú se quede pegado cuando bajas la página */
+    top: 0; /* Le indica que se quede pegado justo en el borde de arriba (0 píxeles) */
+    z-index: 1000; /* Asegura que el menú siempre pase POR ENCIMA de las fotos y tarjetas al bajar */
+}
+
+.marca { /* Caja que agrupa el dibujo del logo y el nombre de la empresa */
+    display: flex; /* Pone el dibujo del logo al lado del texto */
+    align-items: center; /* Alinea el dibujo y el texto al centro de altura */
+    gap: 15px; /* Deja una separación de 15px entre el dibujo y el nombre */
+}
+
+.logo-menu img { /* Imagen del logo en el menú */
+    width: 55px; /* Le da un ancho fijo de 55 píxeles */
+    display: block; /* Evita un pequeño espacio fantasma que suele quedar debajo de las fotos */
+}
+
+.titulo-logo { /* Nombre principal de la marca */
+    margin: 0; /* Quita espacios extra alrededor del título */
+    color: #4a322e; /* Pinta las letras de color marrón oscuro */
+    font-size: 28px; /* Define un tamaño grande para la letra */
+}
+
+.subtitulo-logo { /* Texto pequeño debajo del nombre de la marca */
+    font-size: 14px; /* Define un tamaño de letra pequeño */
+    letter-spacing: 2px; /* Separa un poco las letras entre sí para que se vea elegante */
+}
+
+.contenedor-enlaces { /* Caja que guarda los botones de navegación */
+    display: flex; /* Pone los enlaces en fila horizontal */
+    align-items: center; /* Los alinea verticalmente al centro */
+    gap: 25px; /* Deja 25px de espacio entre cada enlace */
+}
+
+.contenedor-enlaces a { /* Estilo de cada palabra o enlace del menú */
+    text-decoration: none; /* Quita la línea subrayada típica de los enlaces */
+    color: #4a322e; /* Pinta las letras de marrón oscuro */
+    font-size: 18px; /* Define el tamaño del texto del menú */
+}
+
+.contenedor-enlaces a.activo { /* Estilo especial para el botón de la página en la que estamos ahora */
+    background-color: #7d5d58; /* Le pone un fondo marrón rosado */
+    color: white; /* Cambia el color de la letra a blanco */
+    padding: 10px 24px; /* Crea espacio alrededor del texto para que parezca un botón */
+    border-radius: 25px; /* Redondea las esquinas para darle forma de píldora */
+}
+
+.banner { /* Sección grande de portada con foto de fondo */
+    background-image: url(img/img-banner.jfif); /* Carga la fotografía que va de fondo */
+    background-size: cover; /* Ajusta la foto para que cubra toda la caja sin deformarse */
+    background-position: center; /* Centra la foto para que siempre se vea la parte principal */
+    padding: 100px 40px; /* Da bastante altura arriba/abajo (100px) y espacio a los lados (40px) */
+}
+
+.contenido-portada { /* Caja que contiene los textos encima de la foto de portada */
+    max-width: 500px; /* Limita el ancho del texto para que no tape toda la fotografía */
+}
+
+.contenido-portada h1 { /* Título principal de la portada */
+    color: #4a322e;
+    font-size: 45px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.contenido-portada p { /* Párrafo descriptivo debajo del título de portada */
+    font-size: 22px; /* Define un tamaño de letra mediano-grande */
+    color: #4a322e;
+}
+
+.btn { /* Botón principal de acción */
+    display: inline-block; /* Permite darle medidas y espacios como una caja sin ocupar todo el ancho */
+    background-color: #7d5d58; /* Pinta el botón de marrón rosado */
+    color: white; /* Pone las letras del botón en blanco */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    padding: 12px 28px; /* Da grosor y ancho interno al botón */
+    border-radius: 25px; /* Redondea completamente los bordes del botón */
+    font-family: sans-serif; /* Usa letra limpia y moderna */
+    margin-top: 25px; /* Separa el botón del texto que tiene arriba */
+    cursor: pointer; /* Cambia la flecha del mouse por una manito al pasar por encima */
+    transition: background-color 0.3s ease; /* Hace que el cambio de color sea suave y no de golpe */
+}
+
+.btn:hover { /* Qué pasa cuando el usuario pasa el mouse encima del botón */
+    background-color: #4a322e; /* Oscurece el color del botón */
+}
+
+.destacado { /* Palabras resaltadas dentro de un texto */
+    font-style: italic; /* Inclina las letras en cursiva */
+}
+
+.nosotros { /* Sección "Sobre nosotros" */
+    display: flex; /* Pone la foto a un lado y el texto al otro */
+    align-items: center; /* Centra verticalmente la foto con respecto al texto */
+    justify-content: center; /* Centra todo el bloque en medio de la pantalla */
+    gap: 50px; /* Deja una separación de 50px entre la foto y el texto */
+    padding: 80px 40px 20px 40px; /* Espacios internos: 80px arriba, 40px derecha, 20px abajo, 40px izquierda */
+}
+
+.nosotros-img img { /* Fotografía de la sección Nosotros */
+    width: 450px; /* Le da un ancho de 450 píxeles */
+    max-width: 100%; /* Evita que la foto se salga de la pantalla si el celular es más angosto */
+    border-radius: 20px; /* Redondea las cuatro esquinas de la foto */
+    display: block; /* Elimina espacios vacíos debajo de la imagen */
+}
+
+.subtitulo-nosotros { /* Etiqueta pequeña arriba del título "Nosotros" */
+    font-family: sans-serif; /* Tipo de letra limpio */
+    font-size: 12px; /* Letra pequeña */
+    letter-spacing: 2px; /* Separa las letras para darle estilo */
+    color: #7d5d58; /* Color marrón rosado suave */
+    margin-bottom: 10px; /* Deja 10px de aire debajo antes del título */
+}
+
+.nosotros-text h2 { /* Título principal de la sección Nosotros */
+    color: #4a322e; /* Color marrón oscuro */
+    font-size: 38px; /* Tamaño grande */
+    margin-top: 0; /* Sin espacio extra arriba */
+    margin-bottom: 15px; /* Deja 15px de espacio antes del párrafo */
+}
+
+.nosotros-text p { /* Párrafo de historia en Nosotros */
+    font-family: sans-serif; /* Tipo de letra limpio y fácil de leer */
+    color: #4a332e; /* Color marrón oscuro */
+    line-height: 1.6; /* Aumenta el espacio entre renglones para leer con comodidad */
+}
+
+.nosotros-text .frase-firma { /* Frase decorativa al final de Nosotros */
+    font-family: cursive; /* Usa un estilo de letra manuscrita */
+    font-style: italic; /* Inclina un poco la letra */
+    font-size: 24px; /* Tamaño mediano */
+    margin-top: 20px; /* La separa 20px del párrafo anterior */
+}
+
+.elegirnos { /* Sección "¿Por qué elegirnos?" */
+    padding: 20px 40px 60px 40px; /* Espacios alrededor de la sección (arriba, derecha, abajo, izquierda) */
+    text-align: center; /* Centra todos los textos de esta sección */
+}
+
+.elegirnos h2 { /* Título "¿Por qué elegirnos?" */
+    color: #4a322e; /* Color marrón oscuro */
+    font-size: 32px; /* Tamaño grande */
+    margin-top: 15px; /* Espacio arriba */
+    margin-bottom: 35px; /* Espacio abajo antes de los íconos */
+    display: flex; /* Permite poner las líneas decorativas a los lados del título */
+    align-items: center; /* Alinea las líneas exactamente a la mitad de altura del texto */
+    justify-content: center; /* Centra el título y sus líneas */
+    gap: 40px; /* Deja 40px de espacio entre el texto y las líneas laterales */
+}
+
+.elegirnos h2::before, .elegirnos h2::after { /* Crea las dos líneas decorativas a izquierda y derecha del título */
+    content: ""; /* Necesario para que el navegador dibuje el adorno aunque no tenga texto */
+    width: 180px; /* Largo de cada línea */
+    height: 1px; /* Grosor muy fino de 1 píxel */
+    background-color: #d3c0bb; /* Color rosado grisáceo suave para las líneas */
+}
+
+.contenedor-beneficios { /* Caja que agrupa los 4 íconos de beneficios */
+    display: flex; /* Coloca los 4 beneficios en fila horizontal */
+    justify-content: center; /* Los centra en la página */
+    gap: 80px; /* Deja 80px de separación entre cada beneficio */
+}
+
+.beneficio { /* Cada columna individual con su círculo y su texto */
+    display: flex; /* Activa el acomodo ordenado */
+    flex-direction: column; /* Pone el círculo arriba y el texto debajo en columna */
+    align-items: center; /* Centra el texto justo debajo del círculo */
+}
+
+.icono-beneficio { /* Marco circular de cada ícono */
+    width: 80px; /* Ancho del círculo */
+    height: 80px; /* Alto del círculo */
+    border-radius: 50%; /* Convierte el cuadrado en un círculo perfecto */
+    overflow: hidden; /* Recorta cualquier esquina de la imagen que sobresalga del círculo */
+}
+
+.icono-beneficio img { /* Imagen dentro del círculo */
+    width: 100%; /* Ocupa todo el ancho del círculo */
+    height: 100%; /* Ocupa todo el alto del círculo */
+    object-fit: cover; /* Ajusta la imagen para llenar el círculo sin aplastarse */
+}
+
+.beneficio p { /* Texto debajo de cada círculo */
+    margin-top: 15px; /* Separa el texto 15px del círculo */
+    font-family: sans-serif; /* Tipo de letra limpio */
+    color: #4a322e; /* Color marrón oscuro */
+    font-size: 15px; /* Tamaño de letra cómodo */
+    line-height: 1.4; /* Espacio entre renglones */
+}
+
+.politicas { /* Espacio exterior que rodea la tarjeta de políticas */
+    padding: 40px 40px 80px 40px; /* Deja aire arriba, a los lados y bastante espacio abajo */
+}
+
+.tarjeta-politicas { /* Caja rosada redondeada de políticas */
+    background-color: #edd9d4; /* Color de fondo rosado pastel */
+    max-width: 1050px; /* Ancho máximo para que no se estire demasiado en pantallas gigantes */
+    margin: 0 auto; /* Centra la tarjeta automáticamente en medio de la página */
+    border-radius: 25px; /* Redondea las esquinas de la tarjeta */
+    padding: 45px 60px; /* Espacio interno para que el contenido no toque los bordes */
+    display: flex; /* Pone el ícono del documento al lado del texto */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 45px; /* Deja 45px entre el ícono y el texto */
+    position: relative; /* Sirve de referencia para que la palmera se ubique respecto a esta tarjeta */
+    overflow: hidden; /* Recorta cualquier parte de la palmera que intente salirse de los bordes */
+}
+
+.politicas-icono { /* Caja del ícono del documento */
+    border-right: 1px solid #b89f9a; /* Dibuja la línea vertical divisoria a la derecha del ícono */
+    padding-right: 45px; /* Deja 45px entre el ícono y esa línea vertical */
+}
+
+.politicas-icono img { /* Dibujo del documento */
+    width: 100px; /* Le da un ancho de 100 píxeles */
+    display: block; /* Quita espacios extra debajo del dibujo */
+}
+
+.politicas-texto { /* Caja con los textos de políticas */
+    max-width: 650px; /* Limita el ancho de los párrafos */
+    padding-right: 90px; /* Deja espacio libre a la derecha para que el texto nunca choque con la palmera */
+}
+
+.politicas-texto p { /* Párrafo explicativo de políticas */
+    font-family: sans-serif; /* Letra limpia */
+    color: #4a322e; /* Color marrón oscuro */
+    font-size: 15px; /* Tamaño de letra mediano */
+    line-height: 1.6; /* Espacio cómodo entre renglones */
+    margin: 0; /* Sin márgenes extra */
+}
+
+.politicas-texto .subtitulo-politicas { /* Etiqueta pequeña "NUESTRA POLÍTICA" */
+    font-size: 12px; /* Tamaño pequeño */
+    letter-spacing: 2px; /* Separa las letras */
+    color: #7d5d58; /* Color marrón rosado */
+    margin-bottom: 8px; /* Espacio debajo antes del título */
+}
+
+.politicas-texto h2 { /* Título "Compromiso y confianza" */
+    color: #4a322e; /* Color marrón oscuro */
+    font-size: 32px; /* Tamaño grande */
+    margin: 0 0 12px 0; /* Deja 12px de espacio debajo antes del párrafo */
+}
+
+.foto-palmera { /* Caja que sostiene la ilustración de la rama o palmera */
+    position: absolute; /* Permite mover la palmera libremente dentro de la tarjeta sin empujar el texto */
+    right: 15px; /* La pega a 15px del borde derecho */
+    bottom: 0; /* La apoya justo en el borde inferior de la tarjeta */
+    width: 125px; /* Define el ancho de la ilustración */
+}
+
+.foto-palmera img { /* Imagen de la palmera */
+    width: 100%; /* Hace que la imagen ocupe todo el ancho de su caja (125px) */
+    height: auto; /* Calcula la altura sola para que no se vea estirada ni aplastada */
+    display: block; /* Elimina espacios vacíos debajo */
+}
+
+.footer { /* Caja principal del pie de página */
+    background-image: url(img/foto-footer.png);
+    color: #f5ebe6; /* Pinta las letras de color crema suave */
+    text-align: center; /* Centra todos los textos */
+    padding: 50px 20px 30px 20px; /* Deja espacio arriba, a los lados y abajo */
+}
+
+.subtitulo-footer { /* Texto pequeño "CONTÁCTANOS" */
+    font-family: sans-serif; /* Tipo de letra limpio */
+    font-size: 12px; /* Letra pequeña */
+    letter-spacing: 2px; /* Separa un poco las letras */
+    color: #edd9d4; /* Color rosado claro */
+    margin-bottom: 10px; /* Espacio debajo antes del título */
+}
+
+.footer h2 { /* Frase principal del pie de página */
+    font-size: 30px; /* Tamaño grande */
+    margin-bottom: 35px; /* Espacio debajo antes de los botones */
+}
+
+.redes-footer { /* Caja que junta WhatsApp y Síguenos */
+    display: flex; /* Pone ambos grupos uno al lado del otro */
+    justify-content: center; /* Los centra en medio de la pantalla */
+    gap: 80px; /* Deja espacio entre WhatsApp y Síguenos */
+    margin-bottom: 40px; /* Espacio debajo antes de la línea final */
+}
+
+.grupo-red { /* Columna de cada red (círculo arriba y palabra abajo) */
+    display: flex; /* Activa el orden */
+    flex-direction: column; /* Pone el círculo arriba y el texto debajo */
+    align-items: center; /* Centra el texto debajo del círculo */
+    gap: 10px; /* Separa el círculo del texto */
+    font-family: sans-serif; /* Letra limpia */
+    font-size: 14px; /* Tamaño mediano-pequeño */
+}
+
+.grupo-red p {
+    font-size: 19px;
+}
+
+.dos-iconos { /* Caja para juntar Instagram y Facebook */
+    display: flex; /* Los pone uno al lado del otro */
+    gap: 12px; /* Separa un poco ambos círculos */
+}
+
+.circulo-red { /* Cada círculo rosado */
+    width: 45px; /* Ancho del círculo */
+    height: 45px; /* Alto del círculo */
+    background-color: #edd9d4; /* Color rosado pastel */
+    border-radius: 50%; /* Lo convierte en un círculo */
+    display: flex; /* Permite centrar el ícono adentro */
+    align-items: center; /* Centra el ícono verticalmente */
+    justify-content: center; /* Centra el ícono horizontalmente */
+}
+
+.circulo-red img { /* Imagen dentro del círculo */
+    width: 40px; /* Ancho del dibujo */
+    height: 40px; /* Alto del dibujo */
+    display: block; /* Quita espacios extra */
+}
+
+.copyright { /* Texto final de derechos reservados */
+    font-family: sans-serif; /* Letra limpia */
+    font-size: 14px; /* Letra pequeña */
+    color: #edd9d4; /* Color rosado claro */
+    border-top: 1px solid #7d5d58; /* Dibuja una línea fina encima del texto */
+    padding-top: 20px; /* Separa el texto de esa línea */
+    max-width: 800px; /* Hace que la línea no llegue hasta los bordes de la pantalla */
+    margin: 0 auto; /* Centra la línea y el texto */
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO - INICIO
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Menú apilado y sin bloquear pantalla al bajar */
+    .menu {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        position: static;
+    }
+
+    .marca {
+        gap: 10px;
+    }
+
+    .titulo-logo {
+        font-size: 22px;
+    }
+
+    .subtitulo-logo {
+        font-size: 11px;
+    }
+
+    .contenedor-enlaces {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contenedor-enlaces a {
+        font-size: 16px;
+    }
+
+    .contenedor-enlaces a.activo {
+        padding: 8px 18px;
+    }
+
+    /* Portada */
+    .banner {
+        padding: 60px 20px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 32px;
+    }
+
+    .contenido-portada p {
+        font-size: 18px;
+    }
+
+    /* Sección Nosotros: imagen arriba, texto abajo */
+    .nosotros {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 20px 20px 20px;
+        gap: 25px;
+    }
+
+    .nosotros-text h2 {
+        font-size: 28px;
+    }
+
+    /* Sección ¿Por qué elegirnos? */
+    .elegirnos {
+        padding: 20px 20px 45px 20px;
+    }
+
+    .elegirnos h2 {
+        font-size: 25px;
+        gap: 12px;
+    }
+
+    .elegirnos h2::before,
+    .elegirnos h2::after {
+        width: 45px;
+    }
+
+    .contenedor-beneficios {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* Tarjeta de Políticas */
+    .politicas {
+        padding: 20px 20px 50px 20px;
+    }
+
+    .tarjeta-politicas {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .politicas-icono {
+        border-right: none;
+        border-bottom: 1px solid #b89f9a;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .politicas-texto {
+        padding-right: 0;
+    }
+
+    .politicas-texto h2 {
+        font-size: 26px;
+    }
+
+    .foto-palmera {
+        width: 75px;
+        opacity: 0.35;
+        right: 5px;
+    }
+
+    /* Footer */
+    .footer h2 {
+        font-size: 24px;
+    }
+
+    .redes-footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
